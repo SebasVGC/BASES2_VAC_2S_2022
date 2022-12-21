@@ -1,0 +1,29 @@
+Conectarse a mongo desde terminal
+comando mongosh
+
+mostrar bases de datos de nuestro servidor
+show dbs;
+
+utilizar base de datos
+use nombre_db;
+
+mostrar colecciones de una db
+show tables;
+
+insertar un dato en una coleccion
+Si la coleccion no existe, la crea automaticamente
+db.nuevacoleccion1.insertOne({"nombre":"alumno1","edad":22});
+db.nuevacoleccion1.insertOne([{"nombre":"alumno1.1","edad":44},{"nombre":"alumno1.2","edad":17}])
+
+insertar muchos registros
+db.nuevacoleccion1.insertMany([{"nombre":"alumno2","edad":21},{"nombre":"alumno3","edad":24}]);
+
+Mostrar datos de una coleccion: select * de coleccion
+db.collection_name.find()
+
+Mostrar todos los registros con idHabitacion=4
+db.logActividad.find({'idHabitacion':'4'});
+
+db.nuevacoleccion1.find({'edad':22});
+
+db.nuevacoleccion1.find({'edad': {$lte:24} });
