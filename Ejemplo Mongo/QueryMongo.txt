@@ -27,3 +27,5 @@ db.logActividad.find({'idHabitacion':'4'});
 db.nuevacoleccion1.find({'edad':22});
 
 db.nuevacoleccion1.find({'edad': {$lte:24} });
+
+db.logHabitacion.aggregate([{$group:{ _id:{idHabitacion: "$idHabitacion"},num_pacientes:{$sum:1}}},{$sort : { num_pacientes : 1 } },]);
